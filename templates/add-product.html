@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+ <div>
+     <h1 class="text-info text-center">ADD PRODUCT</h1>
+     <form class="product-form" method="post" action="{% url 'add-product-page' %}">
+         <p>{{ success }}</p>
+         {% csrf_token %}
+         <input required class="form-control" placeholder="Enter Name" name="p-name" type="text">
+         <input required class="form-control" placeholder="Enter qtty" name="p-qtty" type="text">
+         <input required class="form-control" placeholder="Enter size" name="p-size" type="text">
+         <input required class="form-control" placeholder="Enter price" name="p-price" type="text">
+         <input class="btn btn-info" value="Save" type="submit">
+         <p>{{ prod_name }}</p>
+         <p>{{ prod_qtty }}</p>
+         <p>{{ prod_size }}</p>
+         <p>{{ prod_price }}</p>
+         <p></p>
+
+
+     </form>
+ </div>
+{% endblock %}
